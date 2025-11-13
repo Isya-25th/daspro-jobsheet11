@@ -24,8 +24,14 @@ public class BioskopWithScanner13 {
                         System.out.print("Masukkan kolom (1-2): ");
                         int kolom = sc.nextInt();
                         sc.nextLine();
-
-                        penonton[baris - 1][kolom - 1] = nama;
+                        
+                        if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
+                            System.out.println("Nomor baris/kolom tidak valid. Baris 1-4, Kolom 1-2.");
+                        } else if (penonton[baris - 1][kolom - 1] != null) {
+                            System.out.println("Kursi sudah dipesan oleh " + penonton[baris - 1][kolom - 1] + ". Silakan pilih kursi lain.");
+                        } else {
+                            penonton[baris - 1][kolom - 1] = nama;
+                        }
 
                         System.out.print("Input penonton lainnya? (y/n): ");
                         String next = sc.nextLine();
