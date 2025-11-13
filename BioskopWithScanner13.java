@@ -28,7 +28,7 @@ public class BioskopWithScanner13 {
                         if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
                             System.out.println("Nomor baris/kolom tidak valid. Baris 1-4, Kolom 1-2.");
                         } else if (penonton[baris - 1][kolom - 1] != null) {
-                            System.out.println("Kursi sudah dipesan oleh " + penonton[baris - 1][kolom - 1] + ". Silakan pilih kursi lain.");
+                            System.out.println("Kursi sudah dipesan oleh pemesan lainnya. Silakan pilih kursi lain.");
                         } else {
                             penonton[baris - 1][kolom - 1] = nama;
                         }
@@ -46,7 +46,7 @@ public class BioskopWithScanner13 {
                     System.out.println("\nDaftar Penonton:");
                     for (int i = 0; i < 4; i++) {
                         for (int j = 0; j < 2; j++) {
-                            String namaPenonton = (penonton[i][j] != null) ? penonton[i][j] : "";
+                            String namaPenonton = (penonton[i][j] != null) ? penonton[i][j] : "***";
                             System.out.print("Baris " + (i + 1) + " Kolom " + (j + 1) + ": " + namaPenonton + "\t");
                         }
                         System.out.println();
